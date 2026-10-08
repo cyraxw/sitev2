@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cyrax</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topo"></div>
+  <header class="navbar">
+    <a class="brand" href="#home"><span>◈</span> <span class="siteName">CYRAX</span><span>GG</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#weapons">Weapons</a>
+      <a href="#configs">Configs</a>
+      <a href="#builds">Builds</a>
+      <a href="#news">News</a>
+      <a href="#featured">Featured</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" class="icon-btn" title="Toggle theme">☾</button>
+      <a class="admin-link" href="admin/admin.html">Login</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div>
+        <div class="eyebrow">CALL OF DUTY MOBILE • LOADOUT DATABASE</div>
+        <h1><span id="heroTagline">Build. Copy.<br><span>Dominate.</span></span></h1>
+        <p id="heroText">Find CODM weapon builds, HUD codes, sensitivity and graphics configs in one fast gaming hub.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#weapons">Browse Loadouts</a>
+          <a class="btn ghost" href="#configs">View Configs</a>
+        </div>
+      </div>
+      <div class="hero-card tiktok-hero">
+        <div class="scanline"></div>
+        <div class="tiktok-frame" id="heroTikTok"><div class="video-placeholder">TIKTOK FEATURED POST</div></div>
+        <a id="heroTikTokBtn" class="btn primary tiktok-btn" href="#" target="_blank" rel="noopener" style="display:none">GO TO THIS POST</a>
+      </div>
+    </section>
+
+    <section id="featured" class="container section">
+      <div class="section-head"><div><span class="eyebrow">FEATURED</span><h2>Featured Content</h2></div></div>
+      <div class="featured-grid">
+        <article class="featured-image panel" id="featuredImage">
+          <div class="placeholder">FEATURED IMAGE</div>
+        </article>
+        <article class="featured-video panel" id="featuredVideoPanel">
+          <video id="featuredVideo" controls muted loop playsinline></video>
+          <div class="video-placeholder" id="videoPlaceholder">FEATURED VIDEO</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="weapons" class="container section">
+      <div class="section-head">
+        <div><span class="eyebrow">ARSENAL</span><h2>Weapon Loadouts</h2></div>
+        <div class="search-wrap"><span>⌕</span><input id="search" placeholder="Search weapons..." autocomplete="off"></div>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="weapon-grid" id="weaponGrid"></div>
+      <div class="empty" id="weaponEmpty">No loadouts found.</div>
+
+      <div class="weapon-modal" id="weaponModal" aria-hidden="true">
+        <div class="weapon-modal-backdrop" data-close-weapon></div>
+        <div class="weapon-modal-card" role="dialog" aria-modal="true" aria-labelledby="weaponModalTitle">
+          <button class="weapon-modal-close" type="button" data-close-weapon aria-label="Close">×</button>
+          <img id="weaponModalImage" src="" alt="Weapon build">
+          <div class="weapon-modal-body">
+            <span class="eyebrow" id="weaponModalCategory">WEAPON BUILD</span>
+            <h3 id="weaponModalTitle"></h3>
+            <div class="attachments" id="weaponModalAttachments"></div>
+            <button class="copy" id="weaponModalCopy" type="button">COPY BUILD</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="builds" class="container section">
+      <div class="section-head"><div><span class="eyebrow">SPOTLIGHT</span><h2>Featured Builds</h2></div></div>
+      <div class="build-grid" id="buildGrid"></div>
+    </section>
+
+    <section id="news" class="container section">
+      <div class="section-head"><div><span class="eyebrow">UPDATES</span><h2>Latest News</h2></div></div>
+      <div class="news-grid" id="newsGrid"></div>
+    </section>
+
+    <section id="configs" class="container section">
+      <div class="section-head"><div><span class="eyebrow">SETTINGS</span><h2>Game Configs</h2></div></div>
+      <div class="config-grid" id="configGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="brand">◈ CODM<span>HUB</span></div>
+    <div class="socials">
+      <a id="fb" href="#" aria-label="Facebook">f</a>
+      <a id="ig" href="#" aria-label="Instagram">◎</a>
+      <a id="dc" href="#" aria-label="Discord">◌</a>
+    <a id="tt" href="#" aria-label="TikTok">♪</a><a id="yt" href="#" aria-label="YouTube">▶</a></div>
+    <small>CODM Loadout Hub • Community project</small>
+  </footer>
+
+  <div id="toast" class="toast">Copied to clipboard</div>
+  <script src="supabase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
